@@ -28,7 +28,7 @@ class Student(models.Model):
     )
     name=models.CharField(max_length=255,blank=True, null=True)
     #school_id=models,IntegerField(max_length=11,blank=True, null=True)
-    school_id = models.ForeignKey(School, on_delete=models.CASCADE,
+    school= models.ForeignKey(School, on_delete=models.CASCADE,
                                   related_name = "school_student",default='')
     telephone=models.BigIntegerField(blank=True, null=True)
     study_status=models.SmallIntegerField(choices=STATUS_CHOICES, default=0)

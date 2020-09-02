@@ -12,8 +12,21 @@
 		{% csrf_token %}    <!--Django提供的防止伪装提交请求-->
 		<div>  <!--搜索框和搜索按钮-->
 			<p>
-			学校名称：<input type='text' school_name='school_name'>
-			毕业状态：<input type='text' study_status='study_status'>
+			<!-- 学校名称：<input type='text' name="school_name" value=""/> -->
+			<!-- 毕业状态：<input type='text' name="study_status" value=""/> -->
+			学校名称：
+			<select name='school_name'>
+				<option value=''>请选择</option>
+				{% for school in allSchools %}
+				<option value='{{school.school_name}}'>{{school.school_name}}</option>
+				{% endfor %}
+			</select>
+			毕业状态：
+			<select name='study_status'>
+			<option value=''>请选择</option>
+			<option value='1'>已毕业</option>
+			<option value='0'>未毕业</option>
+			</select>
 			</p>
 			<input type='submit' value='查询'>
 		</div>
