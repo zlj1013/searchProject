@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<!--页面标签：包含所有页面内容，只有head与body两个子标签-->
+<head>
+	<!-- 显示窗口宽度=客户端的屏幕宽度,显示的文字和图形的初始比例是1.0 -->
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索</title>
+</head>
+<body >
+	<form action="{% url 'gohandle'%}" method='POST'>  <!--向这个页面发送post请求,action配置目标地址(url的name命名）-->
+		{% csrf_token %}    <!--Django提供的防止伪装提交请求-->
+		<div>  <!--搜索框和搜索按钮-->
+			<p>
+			学校名称：<input type='text' school_name='school_name'>
+			毕业状态：<input type='text' study_status='study_status'>
+			</p>
+			<input type='submit' value='查询'>
+		</div>
+	</form>
+
+</body>
+</html>

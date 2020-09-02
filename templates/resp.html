@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<!--页面标签：包含所有页面内容，只有head与body两个子标签-->
+<head>
+<!--头部标签：如标题标签、JS链接、CSS链接都是放入此对标签内-->
+	<!-- 显示窗口宽度=客户端的屏幕宽度,显示的文字和图形的初始比例是1.0 -->
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>返回内容</title>
+</head>
+<body>
+<!--内容标签：页面显示内容存放区域、样式、脚本-->
+	  <table  border="1" length="500" width="600">
+      <thead>
+        <tr>
+          <th >姓名</th>
+          <th >手机号</th>
+          <th >学校</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for res in db_result %}
+        <tr align=center>
+          
+          <td >{{res.name}}</td>
+          <td >{{res.telephone}}</td>
+          <td >{{res.school_name}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</body>
+</html>
