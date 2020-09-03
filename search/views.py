@@ -23,8 +23,8 @@ def doSearch(request):
     school_id=request.POST.get('school_id','')
     study_status=request.POST.get('study_status','')
     students={}
-    if school_id:
-        if study_status:
+    if school_id:#学校不为空
+        if study_status:#学生状态不为空
             students=Student.objects.filter(study_status=study_status, school=school_id)
         else :#学生状态为空
             students=Student.objects.filter(school=school_id)

@@ -8,17 +8,17 @@
     <title>搜索</title>
 </head>
 <body >
-	<form action="{% url 'gohandle'%}" method='POST'>  <!--向这个页面发送post请求,action配置目标地址(url的name命名）-->
+	<form action="{% url 'dosearch'%}" method='POST'>  <!--向这个页面发送post请求,action配置目标地址(url的name命名）-->
 		{% csrf_token %}    <!--Django提供的防止伪装提交请求-->
 		<div>  <!--搜索框和搜索按钮-->
 			<p>
-			<!-- 学校名称：<input type='text' name="school_name" value=""/> -->
-			<!-- 毕业状态：<input type='text' name="study_status" value=""/> -->
+			<!-- 学校名称：<input type='text' name="school_name" /> -->
+			<!-- 毕业状态：<input type='text' name="study_status" /> -->
 			学校名称：
-			<select name='school_name'>
+			<select name='school_id'>
 				<option value=''>请选择</option>
 				{% for school in allSchools %}
-				<option value='{{school.school_name}}'>{{school.school_name}}</option>
+				<option value='{{school.id}}'>{{school.school_name}}</option>
 				{% endfor %}
 			</select>
 			毕业状态：
