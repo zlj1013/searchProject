@@ -18,9 +18,7 @@ from django.urls import path
 from search import views
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
-    path('',views.search,name='gosearch'),
-    path('handle/',views.handle,name='gohandle'),#name是与html页面的关键字绑定
-    #path('hello/',views.hello),
-    #path('hello1/',views.hello1)
+    path('',views.goSearch, name='gosearch'),#空代表默认访问这个url
+    #path('gosearch',views.goSearch, name='gosearch'),
+    path('dosearch/',views.doSearch,name='dosearch'),#name是与html页面的关键字绑定
 ]
